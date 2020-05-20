@@ -42,13 +42,14 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.ViewHolder> {
         final SinhVien SV = mSV.get(position);
         holder.txtTitle.setText(SV.getName());
         Picasso.get().load(SV.getImg())
-                .resize(1100,600)
+                .resize(800,400)
                 .into(holder.imgUrl);
         holder.itemLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
+                Intent intent = new Intent(mContext, SecondActivity.class);
                 intent.putExtra("name", SV.getName()+"");
+                mContext.startActivity(intent);
             }
         });
     }
@@ -61,12 +62,12 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView txtTitle;
         private ImageView imgUrl;
-        LinearLayout itemLayout;
+        ConstraintLayout itemLayout;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             txtTitle =  itemView.findViewById(R.id.txt_title);
             imgUrl = itemView.findViewById(R.id.hinh);
-            itemLayout = itemView.findViewById(R.id.item_linear);
+            itemLayout = itemView.findViewById(R.id.item_constraint);
         }
     }
 }

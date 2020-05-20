@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Adapter;
 import android.widget.LinearLayout;
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<SinhVien> mSinhVien;
     private myAdapter mAdapter;
     private RecyclerView recyclerView;
-    public String getUrl= "http://192.168.50.112/FR-sinhvien/json";
+    public String getUrl= "http://192.168.1.41/SelectHinhAnh.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         mSinhVien = new ArrayList<>();
         mAdapter = new myAdapter(mSinhVien, this);
         recyclerView.setAdapter(mAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this ));
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         getJSON(getUrl);
     }
     protected void getJSON(String url){

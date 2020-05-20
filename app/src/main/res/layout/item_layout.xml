@@ -1,25 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_width="wrap_content"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:layout_marginTop="10dp"
-    android:id="@+id/item_linear"
+    android:id="@+id/item_constraint"
+    android:layout_marginBottom="10dp"
+    android:layout_marginRight="10dp"
     xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:id="@+id/hinh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/icon_setting"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
     <TextView
         android:id="@+id/txt_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
         android:text="tiêu đề"
         android:textSize="30dp"
         android:textStyle="bold"
-      />
-
-    <ImageView
-        android:id="@+id/hinh"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_launcher_background"
-    />
-</LinearLayout>
+        android:textColor="#FAFAFA"
+        app:layout_constraintBottom_toBottomOf="@+id/hinh"
+        app:layout_constraintEnd_toEndOf="@+id/hinh"
+        app:layout_constraintStart_toStartOf="@+id/hinh"
+        app:layout_constraintTop_toTopOf="@+id/hinh" />
+</androidx.constraintlayout.widget.ConstraintLayout>
 
